@@ -1,0 +1,36 @@
+// .card-home {
+//     background: #c5ffc9;
+//     color: #7a277a;
+//     display: block;
+//     padding: 4px;
+//     text-align: center;
+//     box-shadow: 3px 7px 9px 0px;
+//     width: 50%;
+//     margin: auto;
+//   }
+//   .menu {
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 33px;
+//   }
+//   .menu_btn {
+//     background: #fdfdfd;
+//     padding: 8px 16px;
+//     font-size: 22px;
+//     box-shadow: 0px 4px 4px 0px #eee;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     color: #636363;
+//     font-weight: 100;
+.nav-item {
+  cursor: pointer;
+ 
+}
+.active {
+  background: var(--blue);
+  a {
+    color: #eee !important;
+  }
+}
+//   }

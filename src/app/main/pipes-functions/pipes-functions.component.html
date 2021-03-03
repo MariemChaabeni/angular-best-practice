@@ -1,0 +1,36 @@
+<div class="container">
+  <form class="form mb-5">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="newproduct.name"
+        name="name"
+        placeholder="product 15"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="newproduct.price"
+        name="price"
+        placeholder="200.25"
+      />
+    </div>
+    <button type="submit" (click)="add()" class="btn btn-primary">Add</button>
+  </form>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <!-- <td>{{ getTotalPrice(product.price) | currency }}</td> -->
+      <td>{{ product.price | addTax | currency }}</td>
+    </tr>
+  </table>
+</div>

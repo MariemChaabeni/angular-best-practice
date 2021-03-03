@@ -1,0 +1,26 @@
+<div *ngIf="user">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"> Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="user.name"
+      (input)="user.name = $event.target.value"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"> City: </label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="user.address.city"
+      (input)="user.address.city = $event.target.value"
+    />
+  </div>
+
+  <button class="btn btn-primary" (click)="change()">Update</button>
+  <pre   class="mt-5">
+      {{ user | json }}
+    </pre
+  >
+</div>

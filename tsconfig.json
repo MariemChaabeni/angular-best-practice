@@ -11,6 +11,14 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "@demo/*": [
+        "app/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+    },
     "module": "es2020",
     "lib": [
       "es2018",

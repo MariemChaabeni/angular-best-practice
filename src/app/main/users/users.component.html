@@ -1,0 +1,26 @@
+<h1>Users <wb-loading-spinner [loading]="isLoading"></wb-loading-spinner></h1>
+<div class="row">
+  <div class="col-md-6">
+    <users-list
+      [users]="users"
+      (onSelect)="showUserDetails($event)"
+    ></users-list>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="user" [@expandCollapse]>
+      <users-details
+        [user]="user"
+        (userChanged)="changed($event)"
+      ></users-details>
+    </div>
+  </div>
+</div>
+
+<!-- <h2 *ngIf="user">{{ user.name }}</h2>
+<br />
+<users-details
+  [user]="user"
+  (userChanged)="changed($event)"
+></users-details>
+<br /><br />
+<users-list [users]="users"></users-list> -->

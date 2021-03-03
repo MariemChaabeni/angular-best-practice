@@ -1,0 +1,20 @@
+<p>galerie works!</p>
+<!-- <span>Wait for it... {{ photos | async }}</span> -->
+<h1 *ngIf="(photos | async) == null">Loading</h1>
+
+<div class="row">
+  <div class="col-md-3 mb-5" *ngFor="let photo of photos | async">
+    <div class="card h-100">
+      <img
+        class="card-img-top"
+        [src]="photo.thumbnailUrl"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">{{ photo.title }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
