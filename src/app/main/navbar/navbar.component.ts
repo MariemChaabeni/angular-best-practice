@@ -25,7 +25,7 @@ export class NavbarComponent {
     // },
     {
       name: 'FAQ',
-      path: '/faq',
+      path: 'faq',
     },
   ];
 }

@@ -5,31 +5,39 @@ import {
   Output,
   EventEmitter,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { User } from 'src/app/core/models';
 
 @Component({
   selector: 'users-details',
   templateUrl: './users-details.component.html',
-  styleUrls: ['./users-details.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersDetailsComponent implements OnInit {
-  @Input() user: User;
+  @Input() set user(value: User) {
+    this._user = value;
+  }
   @Output() userChanged = new EventEmitter<any>();
-  logMessages = [];
-
-  constructor() {}
+  //Private
+  private _user: User;
+  constructor() {} 
 
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['user']) {
-      const cust = changes['user'].currentValue as User;
-      this.logMessages.push({ title: 'user changed', value: cust });
-    }
+    console.log('change detected');
+    // if (changes['user']) {
+    //   //ddd
+    // }
   }
 
   change() {
     this.userChanged.emit(this.user);
+  }
+
+  //getters
+  get user(): User {
+    return this._user;
   }
 }

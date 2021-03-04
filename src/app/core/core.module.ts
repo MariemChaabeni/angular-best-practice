@@ -1,7 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { NavbarComponent } from '../main/navbar/navbar.component';
 
 @NgModule({
   imports: [HttpClientModule],

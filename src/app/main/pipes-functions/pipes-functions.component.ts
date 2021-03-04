@@ -1,3 +1,4 @@
+import { BrowserLoggerService } from './../../core/services/browser-logger.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -24,16 +25,16 @@ export class PipesFunctionsComponent implements OnInit {
     name: '',
     price: null,
   };
-  constructor() {}
+  constructor(private logger: BrowserLoggerService) {}
 
   ngOnInit(): void {}
 
   getTotalPrice(price: number) {
-    console.log('addtax pipe called');
+    this.logger.log('addtax pipe called');
     let total = price + price * 0.08;
     return total;
   }
-  
+
   add() {
     this.products.push(this.newproduct);
     this.newproduct = { name: '', price: null };

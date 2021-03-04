@@ -1,12 +1,13 @@
-
 <table *ngIf="users" class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Adress</th>
   </tr>
   <tr *ngFor="let user of users" (click)="showUserDetails(user)">
     <td>{{ user.name }}</td>
     <td>{{ user.email }}</td>
+    <td>{{ user.address.city }}</td>
   </tr>
 </table>
 <br /><br />

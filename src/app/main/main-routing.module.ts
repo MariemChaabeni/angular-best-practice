@@ -1,3 +1,4 @@
+import { FaqComponent } from './faq/faq.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
@@ -8,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
+      {
+        path: 'faq',
+        loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
+      },
       {
         path: 'users',
         loadChildren: () =>

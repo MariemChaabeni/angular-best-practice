@@ -5,8 +5,9 @@ import { MainComponent } from './main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [MainComponent, NavbarComponent],
+  declarations: [
+    MainComponent,
+    NavbarComponent  ],
   imports: [CommonModule, MainRoutingModule],
 })
-
 export class MainModule {}

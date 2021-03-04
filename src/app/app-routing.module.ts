@@ -1,3 +1,4 @@
+import { AuthGuard } from './core/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './main/users/users.component';
@@ -6,14 +7,6 @@ import { FaqComponent } from './main/faq/faq.component';
 const routes: Routes = [
   { path: "", redirectTo: "main", pathMatch: "full" },
   {
-    path: 'galery',
-    component: GalerieComponent,
-  },
-  {
-    path: 'faq',
-    component: FaqComponent,
-  },
-  {
     path: 'login',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginModule),
@@ -21,6 +14,7 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
+    canActivate:[AuthGuard]
   },
 ];
 

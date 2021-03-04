@@ -18,11 +18,11 @@ export class ErrorInterceptor implements HttpInterceptor {
 	): Observable<HttpEvent<any>> {
 		
 		return next.handle(request)
-		// .pipe(
-		// 	catchError((err) => {
-		// 		const error = err.error.message || err.statusText;
-		// 		return throwError(error);
-		// 	})
-		// );
+		.pipe(
+			catchError((err) => {
+				const error = err.error.message || err.statusText;
+				return throwError(error);
+			})
+		);
 	}
 }

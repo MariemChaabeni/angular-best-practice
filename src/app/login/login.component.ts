@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { loginAnimation } from 'src/app/animations';
+import { loginAnimation } from 'src/app/core/animations';
 
 @Component({
   selector: 'login',
