@@ -13,7 +13,7 @@ export class FaqComponent implements OnInit, OnDestroy {
 
   mediasizemd:boolean
 
-  // private subs = new SubSink();
+  private subs = new SubSink();
   private subscription: Subscription;
   constructor(
     private _matchMediaService: matchMediaService,
@@ -21,16 +21,15 @@ export class FaqComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // this.subs.sink
-    this.subscription = this._matchMediaService.onMediaChange.subscribe(() => {
+    this.subs.sink =  this.subscription = this._matchMediaService.onMediaChange.subscribe(() => {
       console.log('gt-sm ===> ', this._mediaObserver.isActive('gt-sm'));
       this.mediasizemd = this._mediaObserver.isActive("gt-md");
     });
   }
   ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-    // this.subs.unsubscribe();
+    // if (this.subscription) {
+    //   this.subscription.unsubscribe();
+    // }
+    this.subs.unsubscribe();
   }
 }
